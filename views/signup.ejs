@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </head>
+  <body class="main">
+    <div class="container">
+      <div class="signin-up">
+        <img src="/images/lock.svg" alt="image" class="logo">
+        <h2>Sign Up</h2>
+
+            <form action="/users/sign-up" method="post" class="form">
+
+
+                <div class="field">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                  </div>
+          <div class="field">
+            <input type="email" name="email" placeholder="Your Email" required />
+          </div>
+
+          <div class="field">
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="field">
+            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+
+          </div>
+
+          <div class="field">
+            <input type="submit" value="SIGN UP" class="btn btn-primary">
+          </div>
+        </form>
+
+        <p>Already have an account? <a href="/users/sign-in">Log in</a></p>
+    
+      </div>
+    </div>
+
+    
+  </body>
+</html>
+
+
+<!-- 
+<h1> Sign up</h1>
+
+<div class="d-flex align-items-center">
+
+    <form action="/users/sign-up" method="post" class="mx-auto">
+
+        <input type="text" name="name" placeholder="Your Name" required class="form-control">
+    <input type="text" name="email" placeholder="Your Email" required class="form-control">
+    <input type="password" name="password" placeholder="Password" required class="form-control">
+    <input type="password" name="confirm_password" placeholder="Confirm Password" required class="form-control">
+    
+    
+    <input type="submit" value="signup" class="btn btn-primary">
+    
+    </form>
+</div>
+
+ -->
