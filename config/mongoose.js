@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1/nodejs-auth');
+mongoose.connect('mongodb+srv://durgesh14:Durgesh%4014@my-cluster.hrva1w0.mongodb.net/nodejs-auth');
 
 const db = mongoose.connection;
 
