@@ -2,6 +2,8 @@ const bcrypt = require("bcrypt");
 const crypto = require("crypto");
 const User = require("../models/user");
 const nodemailer = require("nodemailer");
+require('dotenv').config()
+
 module.exports.signup = function (req, res) {
   if (req.isAuthenticated()) {
     return res.redirect("/users/profile");
@@ -14,15 +16,7 @@ module.exports.signup = function (req, res) {
 };
 
 module.exports.createUser = async function (req, res) {
-  req.logout(function (err) {
-    if (err) {
-      return next(err);
-    }
-    req.flash("success", "Registration is Successful, Please Login!!");
-
-    return res.redirect("/users/sign-in");
-  });
-  // return res.render("profile");
+  return res.redirect("/users/profile");
 };
 
 module.exports.signIn = function (req, res) {
@@ -35,7 +29,7 @@ module.exports.signIn = function (req, res) {
 };
 
 module.exports.createSession = async function (req, res) {
-console.log("wdwdwdw"+  req.session.flashMessageShown);
+  console.log("wdwdwdw" + req.session.flashMessageShown);
   if (!req.session.flashMessageShown) {
     req.flash("success", "Logged In Successfully");
     req.session.flashMessageShown = true;
@@ -46,10 +40,9 @@ console.log("wdwdwdw"+  req.session.flashMessageShown);
 };
 
 module.exports.profile = async function (req, res) {
- 
-  return res.render("profile",{
-    email: req.user.email,
-    name:req.user.name
+  return res.render("profile", {
+    email: await req.user.email,
+    name: await req.user.name,
   });
 };
 
@@ -128,7 +121,8 @@ module.exports.forgotPass = async function (req, res) {
       secure: false,
       auth: {
         user: "durgesh.project.work@gmail.com",
-        pass: "faenjkssckchambp",
+        // pass: "faenjkssckchambp",
+        pass: process.env.gmailPass
       },
     });
 
@@ -147,7 +141,7 @@ module.exports.forgotPass = async function (req, res) {
       } else {
         console.log("Email sent: " + info.response);
         req.flash("success", "Password Reset. Please Login Again!!");
-    return res.redirect("/users/sign-in");
+        return res.redirect("/users/sign-in");
         // res.send(
         //   '<p> Password reset successful </p> <a href="/users/sign-in">Click here to Login</a>'
         // );
