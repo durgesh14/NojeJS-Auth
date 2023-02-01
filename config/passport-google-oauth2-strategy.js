@@ -5,6 +5,7 @@ const crypto = require("crypto");
 const User = require("../models/user");
 require("dotenv").config();
 
+<<<<<<< HEAD
 //usesing passport.use to create a new googleStrategy instance
 passport.use(
     /*
@@ -15,7 +16,7 @@ passport.use(
     {
       clientID: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
-      callbackURL: "http://127.0.0.1:8000/users/auth/google/callback",
+      callbackURL: "https://nodejsauth.onrender.com/users/auth/google/callback",
     },
     async function (accessToken, refreshToken, profile, done) {
       try {
@@ -24,6 +25,15 @@ passport.use(
         if (user) {
           return done(null, user);
         }
+=======
+passport.use( new googleStrategy(
+{
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    callbackURL: "https://nodejsauth.onrender.com/users/auth/google/callback",
+}
+,
+>>>>>>> c07bea338e2dde83d46996003a35d9e2d82f2dae
 
         //If the user doesn't exist, using User.create to create a new user
         const loggedInUser = await User.create({
