@@ -37,7 +37,7 @@ app.use(express.static("assets"));
 app.use(
   session({
     name: "nodejsauth",
-    //todo secert change
+    
     secret: "somescecretcode",
     saveUninitialized: false,
     resave: true,
@@ -70,5 +70,4 @@ app.listen(port, function (err) {
   console.log(`Server is running on port: ${port}`);
 });
 
-process.exit();
 

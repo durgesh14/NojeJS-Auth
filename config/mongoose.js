@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+require('dotenv').config()
 
-mongoose.connect('mongodb+srv://durgesh14:Durgesh%4014@my-cluster.hrva1w0.mongodb.net/nodejs-auth');
+mongoose.connect(process.env.DB_URI);
 
 const db = mongoose.connection;
 
