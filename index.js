@@ -3,7 +3,7 @@ const cookieParser = require("cookie-parser");
 const expressEjsLayouts = require("express-ejs-layouts");
 const app = express();
 
-const port = 8000;
+const port = process.env.PORT || 8000;
 // Layouts before route
 app.use(expressEjsLayouts);
 
@@ -69,3 +69,6 @@ app.listen(port, function (err) {
 
   console.log(`Server is running on port: ${port}`);
 });
+
+process.exit();
+
