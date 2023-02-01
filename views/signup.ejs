@@ -10,17 +10,20 @@
   <body class="main">
     <div class="container">
       <div class="signin-up">
-        <img src="/images/lock.svg" alt="image" class="logo">
+        <img src="/images/lock.svg" alt="image" class="logo" />
         <h2>Sign Up</h2>
-
-            <form action="/users/sign-up" method="post" class="form">
-
-
-                <div class="field">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                  </div>
+        <!-- Sign Up Form -->
+        <form action="/users/sign-up" method="post" class="form">
           <div class="field">
-            <input type="email" name="email" placeholder="Your Email" required />
+            <input type="text" name="name" placeholder="Your Name" required />
+          </div>
+          <div class="field">
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
           </div>
 
           <div class="field">
@@ -32,43 +35,23 @@
             />
           </div>
           <div class="field">
-            <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-
+            <input
+              type="password"
+              name="confirm_password"
+              placeholder="Confirm Password"
+              required
+            />
           </div>
 
           <div class="field">
-            <input type="submit" value="SIGN UP" class="btn btn-primary">
+            <input type="submit" value="SIGN UP" class="btn btn-primary" />
           </div>
         </form>
         <p>
           <a href="/users/auth/google">Signup using Google</a>
         </p>
         <p>Already have an account? <a href="/users/sign-in">Log in</a></p>
-    
       </div>
     </div>
-
-    
   </body>
 </html>
-
-
-<!-- 
-<h1> Sign up</h1>
-
-<div class="d-flex align-items-center">
-
-    <form action="/users/sign-up" method="post" class="mx-auto">
-
-        <input type="text" name="name" placeholder="Your Name" required class="form-control">
-    <input type="text" name="email" placeholder="Your Email" required class="form-control">
-    <input type="password" name="password" placeholder="Password" required class="form-control">
-    <input type="password" name="confirm_password" placeholder="Confirm Password" required class="form-control">
-    
-    
-    <input type="submit" value="signup" class="btn btn-primary">
-    
-    </form>
-</div>
-
- -->

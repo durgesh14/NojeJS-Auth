@@ -84,3 +84,11 @@ a {
 #layout-main{
     width: 70%;
 }
+
+.not-found{
+    display: flex; 
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
