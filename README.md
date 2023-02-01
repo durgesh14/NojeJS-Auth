@@ -24,9 +24,9 @@ What things you need to install the software and how to install them:
 3. Create a .env file in the root directory and provide the following environment variables:
 
     - gmailPass = gmailPass (Google My account>>Security>>App Password)
-    - DB_URI = <your-database-url>
-    - CLIENT_ID = <your-google-client-id>
-    - CLIENT_SECRET = <your-google-client-secret>
+    - DB_URI = your-database-url
+    - CLIENT_ID = your-google-client-id
+    - CLIENT_SECRET = your-google-client-secret
 
 4. Start the application
 
