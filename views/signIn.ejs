@@ -9,9 +9,9 @@
   <body class="main">
     <div class="container">
       <div class="signin-up">
-        <img src="/images/lock.svg" alt="image" class="logo">
+        <img src="/images/lock.svg" alt="image" class="logo" />
         <h2>Sign In</h2>
-
+        <!-- Sign In Form -->
         <form
           action="/users/sign-in"
           method="post"
@@ -19,7 +19,12 @@
           id="sign-in-form"
         >
           <div class="field">
-            <input type="email" name="email" placeholder="Your Email" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
           </div>
 
           <div class="field">
@@ -45,15 +50,5 @@
         </p>
       </div>
     </div>
-
-    <!-- <h1>Sign In</h1>
-    <form action="/users/sign-in" method="post" id="sign-in-form">
-      <input type="text" name="email" placeholder="Your Email" required />
-      <input type="password" name="password" placeholder="Password" required />
-
-      <input type="submit" value="signIn" />
-    </form> -->
-
-    
   </body>
 </html>

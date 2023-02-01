@@ -27,10 +27,12 @@
   </head>
 
   <body>
+    <!-- allowing dynamic content to be displayed on the page -->
     <main id="layout-main"><%- body %></main>
 
     <%- script %>
 
+    <!-- Script for noty -->
     <script>
       <% if(flash.success && flash.success.length > 0) { %>
 

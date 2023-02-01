@@ -3,6 +3,7 @@ const User = require("../models/user");
 const LocalStrategy = require("passport-local").Strategy;
 const bcrypt = require("bcrypt");
 
+// Passport uses the "local-signup" strategy
 passport.use(
   "local-signup",
   new LocalStrategy(
@@ -11,9 +12,12 @@ passport.use(
       passwordField: "password",
       passReqToCallback: true,
     },
+    // The callback function to handle the authentication request
     async (req, email, password, done) => {
+      // Check if the password and confirm password fields match
       if (password != req.body.confirm_password) {
-        console.log("Password not matching");
+        
+        // Set a flash message to be displayed to the user
         req.flash("error", "Passwords not matching!!");
         return done(null, false);
       }
@@ -38,7 +42,7 @@ passport.use(
     }
   )
 );
-
+// Passport uses the "local-signin" strategy
 passport.use(
   "local-signin",
   new LocalStrategy(
@@ -47,7 +51,7 @@ passport.use(
       passwordField: "password",
       passReqToCallback: true,
     },
-
+    // The callback function to handle the authentication request
     async (req, email, password, done) => {
       try {
         const user = await User.findOne({ email });
