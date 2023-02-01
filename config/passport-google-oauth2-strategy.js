@@ -9,7 +9,7 @@ passport.use( new googleStrategy(
 {
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://127.0.0.1:8000/users/auth/google/callback",
+    callbackURL: "https://nodejsauth.onrender.com/users/auth/google/callback",
 }
 ,
 
